@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.todolist.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="ToDoList" />
+
+    <GridPane alignment="CENTER" hgap="15" vgap="15">
+        <Label text="Title" GridPane.columnIndex="0" GridPane.rowIndex="0">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label text="Description" GridPane.rowIndex="1">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+        <TextField fx:id="txtDescription" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Type" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtType" layoutX="81.0" layoutY="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+
+        <Button fx:id="btnAdd" minWidth="39.0" onAction="#onAddButtonClick" prefHeight="21.0" prefWidth="39.0" text="Add" GridPane.columnIndex="2" GridPane.rowIndex="0">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+        <Button fx:id="btnReset" minWidth="45.0" onAction="#onResetButtonClick" prefHeight="21.0" prefWidth="45.0" text="Reset" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+
+        <TableView fx:id="tblTasks" prefHeight="400.0" prefWidth="486.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
+            <columns>
+                <TableColumn text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="75.0" text="NAME">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="140.0" text="DESC.">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn prefWidth="63.0" text="STATUS">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="status" />
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="TYPE">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type" />
+                    </cellValueFactory>
+                </TableColumn>
+
+            </columns>
+        </TableView>
+
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+
+</VBox>
